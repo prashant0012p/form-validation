@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+    <style>
+    .container{
+        background-color: tomato;
+    }
+    form > div{
+        padding: 11px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    </style>
+</head>
+
+<body>
+
+    <h2>FORM VALIDETION </h2>
+
+  <div class="container">
+    <form action="backend.php" name="myForm" method="post" onsubmit="return formvalidetion()">
+
+        <div class="name-cont">
+            <label for="">Name</label>
+            <input type="text" name="name" placeholder="Enter your first name" class="name"></input>
+        </div>
+<!-- 
+        <div class="lsname-cont">
+         <label for="">Last Name:</label>
+         <input type="text" name="lsname" placeholder="Enter your last name" class="lsname"></input>
+        </div> -->
+
+
+
+        <div class="submit">
+            <input type="submit" value="Submit" class="btn">
+        </div>
+
+    </form>
+</div>
+
+
+    <script type="text/javascript">
+
+        function formvalidetion() {
+            let names = document.myForm.name.value;
+        
+
+
+            if (names == null || names == "") {
+                alert("Name Cant Be Blank!");
+                return false;
+
+            } else if (  names > 0 ) {
+                alert("Numbers are not allowed! inside name section!");
+                return false;
+            }
+            else if (names.length < 3) {
+                alert("Name must be at least 2 character long")
+                return false;
+            } else {
+                confirm("Your name is Submitted Succesfully");
+                return true;
+            }
+        }
+
+        
+        
+    </script>
+
+</body>
+
+</html>
